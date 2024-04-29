@@ -1,1 +1,4 @@
-lhghdhgkgh
+/ 1. create a react app // vite react app
+2. useEffect fake store fetch 
+3. store data in useState hook map it and show in home page
+4. make sure the ui is good.

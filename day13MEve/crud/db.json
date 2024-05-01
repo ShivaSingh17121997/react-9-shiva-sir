@@ -1,0 +1,57 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "json-server",
+      "email": "typicode"
+    },
+    {
+      "userName": "ram",
+      "email": "ram@gami.d",
+      "password": "fa",
+      "id": 2
+    },
+    {
+      "userName": "ram",
+      "email": "ram@gami.d",
+      "password": "fa",
+      "id": 3
+    },
+    {
+      "userName": "dhruv",
+      "email": "dhruv@gamilcom",
+      "password": "afafaa",
+      "id": 4
+    },
+    {
+      "userName": "dhrumil",
+      "email": "dhrumil@gamilcom",
+      "password": "fgbnjhgv",
+      "id": 5
+    },
+    {
+      "userName": "dharmik",
+      "email": "dhar@gmaom.com",
+      "password": "jijhgfredsxcfgyhj",
+      "id": 6
+    },
+    {
+      "userName": "prarthana",
+      "email": "prarth@gamil.com",
+      "password": "jajfajhaafa",
+      "id": 7
+    },
+    {
+      "userName": "prarthana",
+      "email": "prarth@gamil.com",
+      "password": "jajfajhaafa",
+      "id": 8
+    },
+    {
+      "userName": "faaa",
+      "email": "aaa",
+      "password": "afaa",
+      "id": 9
+    }
+  ]
+}

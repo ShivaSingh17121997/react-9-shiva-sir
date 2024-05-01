@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "ram",
+      "email": "json-server",
+      "password": "typicode"
+    },
+    {
+      "userName": "ramr",
+      "email": "ram@gamil.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "userName": "ramr",
+      "email": "ram@gamil.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "userName": "radhe",
+      "email": "radhe@gamil.com",
+      "password": "krishna",
+      "id": 4
+    }
+  ]
+}

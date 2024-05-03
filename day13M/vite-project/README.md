@@ -7,6 +7,8 @@ installed json server
 perform crud operation 
 C - create  // done
 R - Read    // done
-U - Update  // 
-D - Delete  //
+U - Update  //  HW
+D - Delete  //  HW
+
+
 

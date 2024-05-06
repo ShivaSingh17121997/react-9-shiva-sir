@@ -4,35 +4,67 @@ import { useEffect, useState } from "react"
 
 
 function Home() {
-    const [Product, setProduct] = useState([])
+    // const [Product, setProduct] = useState([])
+    const [edit, setEdit] = useState(null)
+    const [updateInput, setUpdatedINput] = useState("")
+    const [datas, setDatas] = useState([])
+
+    const data = [
+        {
+            id: 1,
+            name: "ram"
+        }
+    ]
+
+
+   
+
+    const handleEdit = (id) => {
+
+        const toEdit = data.find((item) => item.id == id)
+        console.log(toEdit)
+        setEdit(toEdit)
+
+    }
+
+    const handleUpdate = () => {
+        const updatedData = data.map((item) => {
+            item.id === edit.id ? { ...item, name: edit.name } : item
+            setEdit
+        })
+        setEditnull
+
+    }
 
 
 
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-                setProduct(data)
-            })
-            .catch((err) => console.log(error, "Something is wrong in fetching data"))
-    }, [])
 
 
     return <>
 
         <ul>
             {
-                Product.map((item, index) => {
+                data.map((item, index) => {
                     return (<div key={item.id} >
                         <li>
-                            {item.title}
+                            {item.name}
+                            <button onClick={() => handleEdit(item.id)} >edit</button>
                         </li>
                     </div>
                     )
                 })
             }
         </ul>
+
+        <div>
+            {edit &&
+                <div>
+                    <input onChange={(e) => setEdit({ ...edit, name: e.target.value })} type="text" value={edit.name} />
+                    <button onClick={handleUpdate} >update</button>
+                </div>
+
+            }
+        </div>
 
     </>
 }

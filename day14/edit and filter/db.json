@@ -63,7 +63,7 @@
       "rating": 4.54,
       "stock": 96,
       "brand": "Infinix",
-      "category": "laptops",
+      "category": "",
       "thumbnail": "https://cdn.dummyjson.com/product-images/9/thumbnail.jpg",
       "images": [
         "https://cdn.dummyjson.com/product-images/9/1.jpg",
@@ -407,5 +407,25 @@
         "https://cdn.dummyjson.com/product-images/27/thumbnail.webp"
       ]
     }
+  ],
+  "api":[
+    { "name":"ram",
+    "age":"21"
+    }, 
+    { "name":"shyam",
+    "age":"21"
+    },
+     { "name":"uddhav",
+    "age":"21"
+    }, 
+    { "name":"balram",
+    "age":"21"
+    }, 
+    { "name":"laxman",
+    "age":"21"
+    }
+
+    
   ]
 }
+

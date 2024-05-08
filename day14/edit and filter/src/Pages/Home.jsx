@@ -58,23 +58,23 @@ export default function Home() {
 
 
     // Handle edit
-    const handleEdit = (id) => {
-        const editItem = data.find((item) => item.id === id);
-        const updatedData = data.map((item) =>
-            item.id === id ? { ...item, editing: true } : item
-        );
-        setData(updatedData);
-    };
+    // const handleEdit = (id) => {
+    //     const editItem = data.find((item) => item.id === id);
+    //     const updatedData = data.map((item) =>
+    //         item.id === id ? { ...item, editing: true } : item
+    //     );
+    //     setData(updatedData);
+    // };
 
-    // Handle update
-    const handleUpdate = (id) => {
-        const updatedData = data.map((item) =>
-            item.id === id
-                ? { ...item, title: item.editTitle, price: item.editPrice, editing: false }
-                : item
-        );
-        setData(updatedData);
-    };
+    // // Handle update
+    // const handleUpdate = (id) => {
+    //     const updatedData = data.map((item) =>
+    //         item.id === id
+    //             ? { ...item, title: item.editTitle, price: item.editPrice, editing: false }
+    //             : item
+    //     );
+    //     setData(updatedData);
+    // };
 
     return (
         <div>

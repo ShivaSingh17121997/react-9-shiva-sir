@@ -1,31 +1,47 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import AuthProvidere from '../Contexts/AuthProvider';
 
 export default function Login() {
 
     const [LoginEmail, setLoginEmail] = useState("");
     const [LoginPassword, setLoginPassword] = useState("");
 
+    const {login, isAuth} = useContext(AuthProvidere)
+
+    console.log(isAuth, "form login")
 
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
 
-        let email = localStorage.getItem('email')
-        let password = localStorage.getItem('password')
+        fetch(`https://reqres.in/api/login`, {
+            method: "POST",
+            body: JSON.stringify({
+                email: LoginEmail,
+                password: LoginPassword
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
 
-        if (LoginEmail === email && LoginPassword === password) {
-            alert("Login Successful")
-            navigate("/")
-        } else {
-            alert("Invalid details")
-        }
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data.token)
+                login(data.token)
+            })
+            .catch((error) => {
+                console.log("something is wrong")
+            })
+
+
+
 
     }
 
-    console.log("hello")
 
     return (
         <div>

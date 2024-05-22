@@ -34,9 +34,7 @@ export default function Signup() {
         if (data.token) {
           navigate("/")
         }
-
       })
-
 
     // let userLoginEmail = localStorage.getItem("email")
     // let userLoginPassword = localStorage.getItem("password")

@@ -6,18 +6,18 @@ import About from '../Pages/About'
 import Contact from '../Pages/Contact'
 import Login from '../Pages/Login'
 import Signup from '../Pages/Signup'
-
 import PrivateRoutes from '../Component/PrivateRoutes'
+
 
 export default function AllRoutes() {
     return (
         <div>
             <Routes>
-                <Route path='/' element={<PrivateRoutes> <Home /> </PrivateRoutes>} />
+                <Route path='/' element={<PrivateRoutes> <Home /></PrivateRoutes>} />
 
-                <Route path='/about' element={<PrivateRoutes> <About /> </PrivateRoutes>} />
+                <Route path='/about' element={<PrivateRoutes><About /></PrivateRoutes>} />
 
-                <Route path='/contacts' element={<PrivateRoutes> <Contact /> </PrivateRoutes>} />
+                <Route path='/contacts' element={<Contact />} />
 
                 <Route path='/login' element={<Login />} />
 

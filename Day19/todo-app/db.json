@@ -1,0 +1,34 @@
+{
+  "todos": [
+    {
+      "todo": "ram",
+      "id": 3
+    },
+    {
+      "todo": "ram ram",
+      "id": 6
+    },
+    {
+      "todo": "jai srree ram",
+      "id": 7
+    },
+    {
+      "todo": "jai srree ram",
+      "id": 8
+    },
+    {
+      "todo": "har har mahadev",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

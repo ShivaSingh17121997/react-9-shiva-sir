@@ -1,11 +1,11 @@
-// import { legacy_createStore } from "redux"
-// import Reducer from "./Reducer";
+import Reduccer from "./Reduccer"
+import { legacy_createStore } from 'redux'
 
-// const initialState = {
-//     counter: 0
-// }
+const initialStatete = {
+    count: 0,
+    todo: []
+}
 
-// export const store = legacy_createStore(Reducer, initialState);
 
 
-export const store = legacy_createStore(Reducer,initialState)
+export const store = legacy_createStore(Reduccer, initialStatete)

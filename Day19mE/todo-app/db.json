@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "ram"
+    },
+    {
+      "todo": "radhe shyam",
+      "id": 2
+    },
+    {
+      "todo": "sita ram ",
+      "id": 4
+    }
+  ]
+}

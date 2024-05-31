@@ -7,6 +7,7 @@ import axios from 'axios'
 export default function Home() {
     const [todo, setTodo] = useState("");
     const [todoData, setTodoData] = useState([]);
+    const [edit, setEdit] = useState(null);
 
     const reverseDta = todoData.reverse()
 
@@ -56,7 +57,27 @@ export default function Home() {
 
     }
 
+    // Edit Function
 
+    const handleEdit = (id) => {
+
+        const isEdited = todoData.find((item) => item.id === id)
+        setEdit(isEdited)
+
+    }
+
+    console.log(edit)
+
+    // handle edit save
+    const handleEditSave = () => {
+        axios.patch(`http://localhost:8080/todos/${edit.id}`, {
+            todo: edit.todo
+        })
+            .then((res) => {
+                console.log("data added successfully")
+            })
+
+    }
 
 
     return (
@@ -68,17 +89,34 @@ export default function Home() {
                 <button>Save</button>
             </form>
 
-            <div>
-                {
-                    todoData.map((item, i) => {
-                        return <div key={item.id}>
-                            <h2>{item.id}</h2>
-                            <h1>{item.todo}</h1>
-                            <button onClick={() => handleDelete(item.id)} >Delete</button>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }} >
+
+
+                <div>
+                    {
+                        todoData.map((item, i) => {
+                            return <div key={item.id}>
+                                {/* <h2>{item.id}</h2> */}
+                                <h1>{item.todo}</h1>
+                                <button onClick={() => handleDelete(item.id)} >Delete</button>
+                                <button onClick={() => handleEdit(item.id)} >Edit</button>
+                            </div>
+                        })
+                    }
+                </div>
+
+                <div>
+                    {
+                        edit && <div>
+                            <input value={edit.todo} onChange={(e) => setEdit({ ...edit, todo: e.target.value })} type="text" />
+                            <button onClick={handleEditSave} >Save</button>
+
                         </div>
-                    })
-                }
+
+                    }
+                </div>
             </div>
+
         </div>
     )
 }

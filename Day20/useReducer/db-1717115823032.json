@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "todo": "json-server"
+    },
+    {
+      "todo": "jai sree ram jai sree ram raja ram",
+      "id": 3
+    },
+    {
+      "todo": "ram ram jai ram",
+      "id": 4
+    },
+    {
+      "todo": "babalu",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

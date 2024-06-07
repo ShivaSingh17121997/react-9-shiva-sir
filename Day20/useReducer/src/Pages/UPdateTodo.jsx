@@ -64,10 +64,14 @@ export default function UpdateTodo() {
         }
     };
 
+
+   // edit
     const handleEdit = (todo) => {
         setTodoInput(todo.todo);
         dispatch({ type: 'SET_TODO_FOR_EDIT', payload: todo });
     };
+
+    //delete
 
     const handleDelete = (id) => {
         axios.delete(`http://localhost:8080/todos/${id}`)

@@ -1,0 +1,65 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "todo": "json-server ram ram ram ram ram",
+      "author": "typicode"
+    },
+    {
+      "todo": "ram ram",
+      "id": 2
+    },
+    {
+      "todo": "shyam ram",
+      "id": 3
+    },
+    {
+      "todo": "ram ram",
+      "id": 4
+    },
+    {
+      "todo": "krishna ram ram ram ram ram",
+      "id": 5
+    },
+    {
+      "todo": "ram",
+      "competed": true,
+      "id": 6
+    },
+    {
+      "todo": "shyaj",
+      "competed": false,
+      "id": 7
+    },
+    {
+      "todo": "jai ram",
+      "competed": true,
+      "category": "public",
+      "id": 8
+    },
+    {
+      "todo": "radhe radhe",
+      "competed": true,
+      "category": "public",
+      "id": 9
+    },
+    {
+      "todo": "abhay",
+      "competed": false,
+      "category": "home",
+      "id": 11
+    },
+    {
+      "todo": "babalu",
+      "competed": false,
+      "category": "personal",
+      "id": 12
+    },
+    {
+      "todo": "narendra modi has won the election 3rd time in the row",
+      "completed": false,
+      "category": "personal",
+      "id": 13
+    }
+  ]
+}

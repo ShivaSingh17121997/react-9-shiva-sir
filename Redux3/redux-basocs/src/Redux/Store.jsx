@@ -7,4 +7,4 @@ const initialState = {
 }
 
 export const store = legacy_createStore(Reducer, initialState)
-console.log(store)  // Check the initial state
+// console.log(store)  // Check the initial state

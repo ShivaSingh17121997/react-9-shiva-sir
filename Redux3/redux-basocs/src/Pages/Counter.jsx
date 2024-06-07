@@ -5,7 +5,7 @@ export default function Counter() {
 
     const data = useSelector((store) => store.count)
     const dispatch = useDispatch()
-    console.log(data)
+    // console.log(data)
 
     const handleIncrease = () => {
         dispatch({ type: "INCREMENT" })

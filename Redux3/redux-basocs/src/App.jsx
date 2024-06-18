@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-    <Todo/>
+      <Todo />
       <Counter />
     </>
   )

@@ -24,6 +24,9 @@ const Reducer = (state, action) => {
             return { ...state, todo: state.todo.map((item) => item.id === action.payload.id ? { ...item, ...action.payload } : item) }
 
 
+            
+
+
         default:
             return state
     }

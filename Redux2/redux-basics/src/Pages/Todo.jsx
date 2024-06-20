@@ -10,8 +10,9 @@ export default function Todo() {
     const [completed, setCompleted] = useState(false);
     const [category, setCategory] = useState("");
     const dispatch = useDispatch();
+    const [filter, setFilter] = useState("");
 
-    const todoData = useSelector(store => store.todo);
+    const todoData = useSelector(store => store.todo); // stored data in the form of array
 
     const handleTodoSubmit = (e) => {
         e.preventDefault();
@@ -70,6 +71,27 @@ export default function Todo() {
         setCategory(isEdited.category);
     };
 
+    console.log(filter)
+
+    // handlecheckbox change
+
+    const handleCheckBoxChange = (id) => {
+        const updatedTodos = todoData.map((item) => {
+            if (item.id === id) {
+                axios.patch(`http://localhost:9090/todo/${id}`, { ...item, status: !item.status })
+                    .then((res) => dispatch({ type: UPDATE_TODO, payload: res.data }))
+                    .catch((error) => console.log(error))
+            }
+            return item;
+        })
+        dispatch({ type: UPDATE_TODO, payload: updatedTodos })
+
+    }
+
+    // filter function 
+
+    const filteredData = filter ? todoData.filter((item) => item.category === filter) : todoData
+
     return (
         <Container>
             <Header>Todo App with Redux</Header>
@@ -101,15 +123,48 @@ export default function Todo() {
                 </Select>
                 <Button type="submit">{edit ? "Update" : "Add"}</Button>
             </Form>
+
+            {/* radio button */}
+            <div>
+
+
+                <label >
+                    <input type="radio" name='filter' value="" checked={filter === ""} onChange={(e) => setFilter(e.target.value)} />
+                    All
+                </label>
+
+                <label>
+                    <input type="radio" value="public" name="filter" checked={filter === "public"} onChange={(e) => setFilter(e.target.value)} />
+                    Public
+                </label>
+
+                <label >
+                    <input type="radio" name='filter' value="personal" checked={filter == "personal"} onChange={(e) => setFilter(e.target.value)} />
+                    Personal
+                </label>
+
+                <label >
+                    <input type="radio" name='filter' value="home" checked={filter === "home"} onChange={(e) => setFilter(e.target.value)} />
+                    Home
+                </label>
+
+            </div>
+
+
             <TodoList>
-                {todoData.map((item) => (
+                {filteredData.map((item) => (
                     <TodoItem key={item.id}>
-                        <TodoText>{item.todo}</TodoText>
+                        <TodoText style={{ textDecoration: item.status ? "line-through" : "none", color: item.status ? "red" : "green" }} >{item.todo}</TodoText>
 
 
-                        
-                        <TodoStatus>{item.completed ? "Completed" : "Not Completed"}</TodoStatus>
+                        <TodoStatus>{item.status ? "Completed" : "Not Completed"}</TodoStatus>
                         <TodoCategory>{item.category}</TodoCategory>
+                        <label >
+                            <input type="checkbox" checked={item.status} onChange={() => handleCheckBoxChange(item.id)} />
+
+                            Completed
+                        </label>
+
                         <EditButton onClick={() => handleEdit(item.id)}>Edit</EditButton>
                         <DeleteButton onClick={() => handleDelete(item.id)}>Delete</DeleteButton>
                     </TodoItem>

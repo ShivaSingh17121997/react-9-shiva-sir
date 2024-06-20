@@ -1,21 +1,19 @@
 {
   "todo": [
     {
-      "id": 1,
-      "todo": "json-server ram ram ram ram ram",
-      "author": "typicode"
-    },
-    {
       "todo": "ram ram",
-      "id": 2
+      "id": 2,
+      "status": false
     },
     {
       "todo": "shyam ram",
-      "id": 3
+      "id": 3,
+      "status": false
     },
     {
       "todo": "ram ram",
-      "id": 4
+      "id": 4,
+      "status": false
     },
     {
       "todo": "krishna ram ram ram ram ram",
@@ -24,12 +22,8 @@
     {
       "todo": "ram",
       "competed": true,
-      "id": 6
-    },
-    {
-      "todo": "shyaj",
-      "competed": false,
-      "id": 7
+      "id": 6,
+      "status": false
     },
     {
       "todo": "jai ram",
@@ -41,13 +35,8 @@
       "todo": "radhe radhe",
       "competed": true,
       "category": "public",
-      "id": 9
-    },
-    {
-      "todo": "abhay",
-      "competed": false,
-      "category": "home",
-      "id": 11
+      "id": 9,
+      "status": false
     },
     {
       "todo": "babalu",
@@ -60,6 +49,37 @@
       "completed": false,
       "category": "personal",
       "id": 13
+    },
+    {
+      "todo": "let s complete the todo app today",
+      "completed": false,
+      "category": "public",
+      "id": 14,
+      "status": false
+    },
+    {
+      "todo": "hello this is new day today is tuesday",
+      "completed": true,
+      "category": "personal",
+      "id": 15
+    },
+    {
+      "todo": "hwan kund me radhe radhe",
+      "completed": true,
+      "category": "public",
+      "id": 16
+    },
+    {
+      "todo": "fasa",
+      "completed": true,
+      "category": "home",
+      "id": 17
+    },
+    {
+      "todo": "hello",
+      "completed": false,
+      "category": "public",
+      "id": 18
     }
   ]
 }

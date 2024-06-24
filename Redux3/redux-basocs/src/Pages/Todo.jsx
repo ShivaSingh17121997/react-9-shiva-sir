@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ADD_TODO, DELETE_TODO, GET_TODO, UPDATE_TODO } from '../Redux/ActionTypes';
 import { getTodo } from '../Redux/Actionl';
+import { addDoc, collection } from 'firebase/firestore';
+import db from '../firebase';
 
 export default function Todo() {
     const [input, setInput] = useState("");
@@ -10,6 +12,15 @@ export default function Todo() {
     const [completed, setCompleted] = useState(false);
     const [category, setCategory] = useState("");
     const [filter, setFilter] = useState("");
+
+
+
+
+    // firebase
+    const value = collection(db, "TodoDataBase");
+
+
+
 
     const dispatch = useDispatch();
 
@@ -19,25 +30,30 @@ export default function Todo() {
         e.preventDefault();
 
         if (edit) {
+
             axios.patch(`http://localhost:8080/todo/${edit.id}`, {
                 todo: input,
                 status: completed,
                 category: category
             })
-                .then((res) => {
-                    dispatch({ type: UPDATE_TODO, payload: res.data });
-                    setInput("");
-                    setEdit(null);
-                    setCompleted(false);
-                    setCategory("");
-                })
+            .then((docRef) => {
+                dispatch({ type: ADD_TODO, payload: { id: docRef.id, todo: input, status: completed, category: category } });
+                setInput("");
+                setCompleted(false);
+                setCategory("");
+            })
                 .catch(err => console.error(err));
         } else {
+
+
+
+
             axios.post('http://localhost:8080/todo', {
                 todo: input,
                 status: completed,
                 category: category
             })
+           
                 .then((res) => {
                     dispatch({ type: ADD_TODO, payload: res.data });
                     setInput("");
@@ -65,7 +81,7 @@ export default function Todo() {
 
 
     // getdodo
-   
+
 
     useEffect(() => {
         // getTodo(dispatch)

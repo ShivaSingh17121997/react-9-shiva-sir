@@ -14,32 +14,47 @@ export default function TodoAppFireBase() {
 
     // Create
 
-    const handleTodoAdd = async () => {
+    // const handleTodoAdd = async () => {
 
-        if (editid) {
-            const todoDoc = doc(db, 'todoDatabase', editid);
-            await updateDoc(todoDoc, { text: input });
-            setEditid(null)
-            setInput("")
-        } else {
-            if (input === "") {
-                alert("please enter valid input field")
-            }
-            try {
-                // Add todo to the Firestore collection
-                await addDoc(todoCollection, { text: input });
-                setInput(""); // Clear the input field
-            } catch (error) {
-                console.error("Error adding document: ", error);
-            }
-        }
+    //     if (editid) {
+    //         const todoDoc = doc(db, 'todoDatabase', editid);
+    //         await updateDoc(todoDoc, { text: input });
+    //         setEditid(null)
+    //         setInput("")
+    //     } else {
+    //         if (input === "") {
+    //             alert("please enter valid input field")
+    //         }
+    //         try {
+    //             // Add todo to the Firestore collection
+    //             await addDoc(todoCollection, { text: input });
+    //             setInput(""); // Clear the input field
+    //         } catch (error) {
+    //             console.error("Error adding document: ", error);
+    //         }
+    //     }
 
-        const todoDAta = await getDocs(todoCollection);
-        setData(todoDAta.docs.map((item) => ({ ...item.data(), id: doc.id })))
+    //     const todoDAta = await getDocs(todoCollection);
+    //     setData(todoDAta.docs.map((item) => ({ ...item.data(), id: doc.id })))
 
+    // }
+
+    // add
+    const value = collection(db, "")
+    const handleAddtodo = async () => {
+        await addDoc(value, { text: input })
     }
 
+
     // Read 
+
+    // useEffect(() => {
+    //     const fetchedData = async () => {
+    //         const tododata = await getDocs(value);
+    //         setData(tododata.docs.map((item) => ({...item.data(), id:item.id})))
+    //     }
+    //     fetchedData();
+    // }, []);
 
     useEffect(() => {
 
@@ -60,18 +75,19 @@ export default function TodoAppFireBase() {
         setData(data.filter((item) => item.id !== id))
     }
 
+
+    // const handleDelere = async(id) => {
+    //     const todoDoc = doc(db, "todoDatabase",id);
+    //     await deleteDoc(todoDoc);
+       
+
+    // }
     // Edit function
 
     const handleEdit = (todo) => {
         setInput(todo.text);
         setEditid(todo.id)
-
-
     }
-
-
-
-
 
 
     return (

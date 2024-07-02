@@ -35,6 +35,7 @@ export default function AllRoutes() {
 
                 <Route path='/login' element={<Login />} />
 
+
             </Routes>
         </div>
     )

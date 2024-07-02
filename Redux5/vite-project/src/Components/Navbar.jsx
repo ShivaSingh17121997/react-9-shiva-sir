@@ -9,6 +9,7 @@ export default function Navbar() {
             <Link to="/contacts" > Contacts </Link>
             <Link to="/Counter" >Counter  </Link>
             <Link to="/login" > Login </Link>
+
         </div>
     )
 }
